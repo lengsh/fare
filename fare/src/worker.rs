@@ -91,7 +91,7 @@ impl NotifyHandle{
                 notify(&msg).await.unwrap();
                 self.notify_his.push((level, now, msg));
             }else{
-                if  self.notify_his[ self.notify_his.len()-1].0 != level && now -  self.notify_his[ self.notify_his.len()-1].1 > chrono::Duration::seconds(60) {
+                if  self.notify_his[ self.notify_his.len()-1].0 > level && now -  self.notify_his[ self.notify_his.len()-1].1 > chrono::Duration::seconds(60) {
                     let msg = format!("{}, {}:{}, {:.2} (av = {:.2})", fname, updown, level, tick.last_price, tick.average_price );
                     if  self.notify_his[ self.notify_his.len()-1].0 > level {
                         notify(&msg).await.unwrap();
