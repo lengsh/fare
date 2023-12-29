@@ -50,8 +50,8 @@ vip权限申请方法：关注openctp公众号并回复“注册vip”。
 官网（非交易时间禁止访问）：http://www.simnow.com.cn
 交易者注册仿真账户后，可以使用从CTP官网下载的API接入这套仿真交易系统。开发、测试完成之后，只需要更换账户密码、前置地址等信息就可以接入期货公司生产系统进行实盘交易。
 ```text
-user（investorId）：218695
-password: x94N2ewEHq!
+user（investorId）：123456
+password: 123456789
 brokerId：9999
 broker_id = '9999'
 authcode = '0000000000000000'
@@ -80,8 +80,8 @@ libthosttraderapi_se.so
 
 
 ```text
-user（investorId）：218695
-password: x94N2ewEHq!
+user（investorId）：123456
+password: 123456789
 brokerId：9999
 broker_id = '9999'
 authcode = '0000000000000000'
