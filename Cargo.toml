@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "ebackend",
+    "fare"
+]
+
+resolver = "2"
