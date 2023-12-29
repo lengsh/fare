@@ -1,0 +1,15 @@
+# hello,world
+# '#'开头的行被识别为注释，将被忽略
+type = tts
+port = 4160
+m_front = tcp://121.37.80.177:20004
+t_front = tcp://192.168.2.108:2004
+subscribe = AP401,AP405
+notify = http://localhost:9996/newsubscribe
+sync = AP401:192.168.2.100:12322,AP401:192.168.2.107:12322
+user = 218695
+passwd = x94N2ewEHq!
+brokerid = 9999
+authcode= 0000000000000000
+appid = simnow_client_test
+ 
