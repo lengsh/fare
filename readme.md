@@ -1,4 +1,4 @@
-动态数据的趋势线型图输出方法（rust）
+动态数据的趋势图
 
 最初的愿望是用rust开发一个期货行情+策略的实时曲线跟踪软件。
 
@@ -44,6 +44,21 @@ Plotters 是一个绘图库，用于以纯 Rust 语言渲染数字、绘图和�
 egui 的目标是成为最易用的 Rust 图形用户界面库，以及用 Rust 制作网络应用程序的最简单方法。
 egui 可以在任何可以绘制纹理三角形的地方使用，这意味着你可以轻松地将它集成到你选择的游戏引擎中。
 
+## ggez
+
+ ggez是一个rust轻量级的2D游戏图形引擎，它的目标是让游戏开发尽量的简单。https://github.com/ggez/ggez
+
+## SFML
+
+SFML是一个跨平台的c++多媒体库，可以简化游戏和多媒体应用程序的开发。
+https://github.com/SFML/SFML
+
+
+## CTP
+
+https://github.com/openctp/openctp/tree/master/docs/CTPAPI 
+或者官网（非交易时间禁止访问）： http://www.sfit.com.cn https://www.simnow.com.cn/
+
 ### These are the official egui integrations:
 
 - eframe for compiling the same app to web/wasm and desktop/native. Uses egui-winit and egui_glow or egui-wgpu.
@@ -62,5 +77,18 @@ To use on Linux, first run:
 ```text
 sudo apt-get install libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxkbcommon-dev libssl-dev
 ```
+
+# 目录及项目介绍
+## bunde
+用c++实现的基于SFML的期货行情跟踪及策略分析。
+
+## cunder
+用rust基于ggez开发的期货行情跟踪及策略分析。
+
+## fare
+用rust基于plotters+egui开发的期货行情跟踪及策略分析。
+
+## foxy
+c++基于CTP开发的行情订阅转发器，解耦上述软件对于CTP行情的关系。
 
 
