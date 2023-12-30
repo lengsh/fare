@@ -1,0 +1,17 @@
+cc = g++
+app = bunde
+
+deps = $(shell find ./ -name "*.h")
+src = $(shell find ./ -name "*.cc")
+obj = $(src:%.cc=%.o) 
+
+all: $(obj)	
+	$(cc) -o $(app) $(obj) -fPIC -DMACOS -lcurl -std=c++17 -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-system -lta_lib -L/opt/homebrew/Cellar/ta-lib/0.4.0/lib -L/opt/homebrew/Cellar/sfml/2.5.1_2/lib -L/opt/homebrew/Cellar/boost/1.81.0_1/lib
+	
+
+%.o: %.cc $(deps)
+	$(cc) -c $< -o $@ -DMACOS -I./api -I/opt/homebrew/Cellar/ta-lib/0.4.0/include -I/opt/homebrew/Cellar/sfml/2.5.1_2/include -I/opt/homebrew/Cellar/boost/1.81.0_1/include -std=c++17 
+
+clean:
+	rm -rf $(obj) $(app)
+	

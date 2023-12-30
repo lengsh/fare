@@ -1,0 +1,23 @@
+# '#'开头表示注释，将被忽略
+#接受的商品编号
+fName = AP401
+#bunny = http://192.168.2.107:9996
+# 左右键控制增加的图片文件，左+右：添加； 双右键：删除
+fFlag = flag.jpeg
+#UDP监听端口
+port = 12322
+#报警价格差值
+dvalue = 10.01
+# 报警服务器地址
+#notify = http://192.168.2.107:9999/xman/sendmessage
+# 窗口高度
+high = 1600
+# 10秒数据的像素数
+barsize = 2.50
+# volume缩放比例
+volscale = 5.0
+# Volume 报警阈值, 注意此值是每秒量，如果seconds=false, 系统自动乘以10秒。
+volwarning = 30
+seconds = true
+# volume, macd, none
+strategy = volume
