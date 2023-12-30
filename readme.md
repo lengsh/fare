@@ -95,3 +95,21 @@ https://github.com/SFML/SFML
 https://github.com/openctp/openctp/tree/master/docs/CTPAPI 
 或者官网（非交易时间禁止访问）： http://www.sfit.com.cn https://www.simnow.com.cn/
 
+## Crow
+借助Crow，提供REST RPC服务，可以开发交易等相关功能的解耦。
+
+download src from https://github.com/CrowCpp/Crow [备选] https://gitcode.com/mirrors/ipkn/crow cp -R include /usr/include/crow
+```text
+#Ubuntu
+sudo apt-get install build-essential libtcmalloc-minimal4 && sudo ln -s /usr/lib/libtcmalloc_minimal.so.4 /usr/lib/libtcmalloc_minimal.so
+#OSX
+brew install boost google-perftools
+```
+由于boost库在1.7以后的版本移除了get_io_service。 vim include/crow/socket_adaptors.h，做如下修改：
+```cpp
+ boost::asio::io_service& get_io_service()
+ {
+     // return socket_.get_io_service();
+     return (boost::asio::io_context&)(socket_).get_executor().context();
+ }
+```
